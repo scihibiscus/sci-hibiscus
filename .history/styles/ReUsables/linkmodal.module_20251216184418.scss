@@ -1,0 +1,40 @@
+.linkmodal{
+  width: 100%;
+  height: auto;
+  padding: 0 0 3.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.lm__container{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lm__wrapper{
+  margin-left: auto;
+  pointer-events: all;
+}
+
+.lm__button{
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: var(--gold);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  &:hover{
+    
+  }
+
+  svg{
+    width: 36px;
+    height: auto;
+  }
+}

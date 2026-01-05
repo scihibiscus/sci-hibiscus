@@ -1,0 +1,52 @@
+.button {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.25rem;
+  gap: 0.5rem;
+  color: var(--color);
+  background-color: var(--background);
+  width: max-content;
+  font-family: var(--medium-font);
+  border-radius: 12px;
+  transition: all 0.5s ease;
+
+  .bicon__wrapper {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    position: relative;
+    left: -100%;
+    transition: left 0.5s ease;
+
+    svg {
+      width: 20px;
+      height: auto;
+
+      path {
+        fill: var(--iconcolor);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--backhover);
+    color: var(--colorhover);
+
+    .bicon__wrapper {
+      left: 0;
+
+      svg {
+        path {
+          fill: var(--iconcolor);
+        }
+      }
+    }
+  }
+}
+
+.bicon {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+}

@@ -1,0 +1,21 @@
+.sq__section{
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  z
+}
+
+.sq__wrapper{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: var(--black);
+}
+
+.sq__back{
+  width: 100%;
+}

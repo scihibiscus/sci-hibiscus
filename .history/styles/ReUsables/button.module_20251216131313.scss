@@ -1,0 +1,16 @@
+.button{
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+  gap: 0.5rem;
+  color: black;
+  background-color: white;
+  width: max-content;
+}
+
+.bicon{
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+

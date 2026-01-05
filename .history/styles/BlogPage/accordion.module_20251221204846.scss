@@ -1,0 +1,38 @@
+.acc__wrapper {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: auto;
+
+  &:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+}
+
+.acc__head {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+.acc__p {
+  font-size: var(--20-font-size);
+  color: var(--black);
+}
+
+.acc__left {
+  svg {
+    width: 20px;
+    height: auto;
+    path {
+      fill: var(--black);
+    }
+  }
+}
+
+.acc__body{
+  
+}

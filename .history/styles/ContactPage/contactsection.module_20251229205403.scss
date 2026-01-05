@@ -1,0 +1,14 @@
+.cs__section{
+  width: 100%;
+  padding: 5rem 0 7rem;
+}
+
+.cs__container{
+  display: grid;
+  grid-template-columns: 65fr 35fr;
+  column-gap: 20px;
+}
+
+.cs__left{
+  width: 100%;
+}

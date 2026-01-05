@@ -1,0 +1,159 @@
+.navigation {
+  width: 100%;
+  height: auto;
+  padding: 1.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.wordmark {
+  svg {
+    width: 180px;
+    height: auto;
+
+    path {
+      fill: var(--logocolor) !important;
+    }
+  }
+}
+
+.navcontent {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navc__left {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+
+  li {
+    list-style: none;
+  }
+}
+
+.nav__links {
+  color: var(--linkcolor);
+  font-family: var(--medium-font);
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: var(--linkhover);
+  }
+}
+
+.navc__right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.contactlink {
+  padding: 0.55rem 1rem 0.45rem;
+  background-color: var(--background);
+  border-radius: 40px;
+  color: var(--color);
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: var(--backhover);
+    color: var(--colorhover);
+  }
+
+  span {
+    font-family: var(--medium-font);
+  }
+}
+
+.menu__open {
+  display: none;
+}
+
+//Responsive Design
+@media screen and (max-width: 870px) {
+  .navc__left {
+    display: none;
+  }
+
+  .contactlink {
+    display: none;
+  }
+
+  .navc__right {
+    gap: 1rem;
+  }
+
+  .menu__open {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    .men {
+      color: white;
+      text-transform: uppercase;
+      font-family: var(--medium-font);
+    }
+
+    .menu__lines {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      transition: all 0.5s ease;
+
+      span {
+        width: 40px;
+        height: 0.1rem;
+        display: block;
+        background-color: white;
+        transform: none;
+        transition: all 0.5s ease;
+        transform-origin: center center;
+      }
+
+      &.active__side{
+        gap: 0;
+
+        .left{
+          transform: rotate(45deg);
+        }
+
+        .right{
+          transform: rotate(-45deg) translateY(1px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .wordmark {
+    margin-top: 0.4rem;
+    svg {
+      width: 150px;
+    }
+  }
+
+  .nav__container {
+    gap: 0rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .wordmark {
+    svg {
+      width: 140px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.statbox{
+  width: 100%;
+  height: auto;
+  border-left: 1px solid rgba(0,0,0,0.25);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.stat__span{
+  color: var(--black);
+  font-size: var(--20-font-size);
+}
+
+.sb__bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sb__icon{
+  svg{
+    height: 100px;
+    width: auto;
+  }
+}
+
+.sb__h3{
+  font-size: var(--30-font-size);
+  font-weight: 400;
+  color: var(--black);
+}
+
+.sb__p{
+  color: var(--text-color);
+}
+
+//Responsive Design
+@media screen and (max-width: 520px) {
+  .sb__icon{
+    svg{
+      height: 80px;
+      width: auto;
+    }
+  }
+
+  .statbox{
+    padding: 0.75rem 1rem;
+  }
+}

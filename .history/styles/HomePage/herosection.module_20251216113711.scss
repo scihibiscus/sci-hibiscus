@@ -1,0 +1,18 @@
+.herosection{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.image__wrapper, .hero__image{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero__image{
+  img{
+    object-fit: cover;
+  }
+}

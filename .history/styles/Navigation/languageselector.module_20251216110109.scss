@@ -1,0 +1,11 @@
+.languageselector{
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.language{
+  color: white;
+  text-transform: uppercase;
+  font-family: var(--medium-font);
+}

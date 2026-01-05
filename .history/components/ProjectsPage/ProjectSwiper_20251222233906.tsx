@@ -1,0 +1,13 @@
+import React from 'react'
+import SwiperImages from '../ReUsables/SwiperImages'
+import styles from "../../styles/ProjectsPage/projectswiper.module.scss"
+
+const ProjectSwiper = () => {
+  return (
+    <div className={styles.p}>
+
+    </div>
+  )
+}
+
+export default ProjectSwiper

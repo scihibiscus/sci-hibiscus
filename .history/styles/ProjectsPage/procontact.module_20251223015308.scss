@@ -1,0 +1,18 @@
+.pc__section{
+  width: 100%;
+}
+
+.pc__container{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem
+}
+
+.pc__top{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.5rem;
+}
+
+.

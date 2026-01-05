@@ -1,0 +1,20 @@
+import React from "react";
+import HiglightedSpan from "../ReUsables/HiglightedSpan";
+import { useTranslation } from "react-i18next";
+import styles from "../../styles/ProjectsPage/projectplans.module.scss";
+
+const ProjectPlans = () => {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.pp__section}>
+      <div className={`container ${styles.pp__container}`}>
+        <div className={styles.ppc__top}>
+          <HiglightedSpan text={t("ProjectsPage")}/>
+        </div>
+        <div className={styles.ppc__bottom}></div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectPlans;

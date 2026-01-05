@@ -1,0 +1,20 @@
+{
+  "getin": "Get in touch",
+  "there": "We are always here for you.",
+  "theretwo": "Are you interested in purchasing an apartment? Please feel free to use our contact form on the relevant project page. For general enquiries, please use our contact form.",
+  "message": "Send us a message",
+  "reply": "We will respond as soon as possible.",
+  "namelabel": "Name",
+  "nameerror": "Your full name must contain at least 3 letters.",
+  "emailerror": "Please enter a valid email address.",
+  "messageerror": "Your message must be atleast 20 words long.",
+  "tellmore": "Tell us more about your inquiry",
+  "phonelabel": "Telephone",
+  "phoneerror": "Please enter a valid phone number.",
+  "subjectplace": "Reason for the inquiry",
+  "subjectlabel": "Inquiry",
+  "subjecterror": "Please enter a valid inquiry",
+  "tickagree": "By checking this box you agree to our",
+  "tickagree2": "Please check this box to send us a message.",
+  "privacy": ""
+}

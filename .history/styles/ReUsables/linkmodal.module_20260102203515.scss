@@ -1,0 +1,154 @@
+.linkmodal {
+  width: 100%;
+  height: auto;
+  padding: 0 0 5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.lm__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lm__wrapper {
+  margin-left: auto;
+  pointer-events: all;
+  position: relative;
+
+  &:hover {
+    .lm__button {
+      svg {
+        transform: rotate(45deg);
+      }
+    }
+
+    .lm__modal {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+.lm__wrappermobile {
+  display: none;
+}
+
+.lm__button {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background-color: var(--gold);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  svg {
+    width: 32px;
+    height: auto;
+    transform: none;
+    transition: all 0.5s ease;
+  }
+}
+
+.lm__modal {
+  width: max-content;
+  height: auto;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--gold);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow: hidden;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  transition: all 0.5s ease;
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+}
+
+.lm__h3 {
+  font-size: var(--20-font-size);
+  font-family: var(--medium-font);
+  font-weight: 400;
+  color: white;
+}
+
+.lmm__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.lmm {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+
+  &:hover {
+    span {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  svg {
+    height: 30px;
+    width: auto;
+
+    path {
+      fill: white;
+    }
+  }
+
+  span {
+    color: white;
+    font-family: var(--medium-font);
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0%;
+      height: 0.06rem;
+      background: white;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+//Responsive Design
+@media screen and (max-width: 1024px) {
+  .lm__wrapper {
+    display: none;
+  }
+
+  .lm__wrappermobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .linkmodal {
+    padding: 0 0 3rem;
+  }
+
+  .lm__button {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+
+    svg {
+      width: 28px;
+    }
+  }
+}

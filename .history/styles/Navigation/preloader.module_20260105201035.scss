@@ -1,0 +1,23 @@
+.preloader__section{
+  width: 100vw;
+  height: 100dvh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.preloader__content{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wmlogo{
+  width: 100%;
+  height: auto;
+
+  
+}

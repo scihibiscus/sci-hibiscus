@@ -1,0 +1,208 @@
+.interest__section {
+  width: 100%;
+  padding: 5rem 0 0;
+}
+
+.interest__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.int__box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+
+  &:nth-of-type(2) {
+    .image__wrapper {
+      order: 2;
+    }
+    .int__content {
+      order: 1;
+    }
+  }
+}
+
+.image__wrapper,
+.int__content {
+  width: 50%;
+}
+
+.image__wrapper {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.image {
+  width: 100%;
+  height: 120%;
+  position: relative;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.int__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.ic__h3 {
+  font-size: var(--40-font-size);
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -1%;
+  line-height: 1.1;
+}
+
+.list {
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list__item {
+  font-size: calc(var(--20-font-size) - 0.15rem);
+}
+
+// Contact Section
+.cs__section {
+  width: 100%;
+  height: auto;
+  padding: 7rem 0;
+}
+
+.cs__wrapper {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 3rem;
+  border-radius: 30px;
+}
+
+.cs__left,
+.cs__right {
+  width: 50%;
+}
+
+.cs__left {
+  aspect-ratio: 16/10;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cs__image {
+  width: 100%;
+  height: 120%;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.cs__right {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 1rem 0;
+}
+
+.csr__one{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cso__top{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem
+}
+
+.cst__h3{
+  font-size: var(--40-font-size);
+  color: var(--black);
+  font-weight: 400;
+  letter-spacing: -1%;
+}
+
+.cso__bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  span{
+    color: var(--black);
+    font-family: var(--medium-font);
+  }
+}
+
+.csr__two{
+  font-size: calc(var(--20-font-size) - 0.15rem);
+  font-family: var(--medium-font);
+  color: var(--black);
+}
+
+
+//Responsive Design
+@media screen and (max-width: 1350px) {
+  .int__box {
+    gap: 2rem;
+  }
+  .image__wrapper {
+    aspect-ratio: 16/13;
+  }
+
+  .int__content {
+    gap: 1.5rem;
+  }
+
+  .list {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  
+}
+
+@media screen and (max-width: 910px) {
+  .int__box {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  
+    &:nth-of-type(2) {
+      .image__wrapper {
+        order: 2;
+      }
+      .int__content {
+        order: 1;
+      }
+    }
+  }
+}

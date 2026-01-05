@@ -1,0 +1,49 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import Arrow from "@/utils/Icons/Arrow";
+import styles from "../../styles/CareerPage/careersection.module.scss";
+
+interface CareerInterface {
+  title: string;
+  pdf: string;
+  task: string[];
+  foundation: string[];
+  offer: string[];
+}
+const CareerModal = ({ content }: { content: CareerInterface }) => {
+  const { t } = useTranslation();
+  return (
+    <div className={styles.modal__wrapper}>
+      <div className={styles.modal__container}>
+        <div className={styles.modal__content}>
+          <div className={styles.mc__one}>
+            <p className={styles.mc__p}>{t("CareerPage:careerhead")}</p>
+            <h3 className={styles.mc__h3}>{content.title}</h3>
+            <div className={styles.button}>
+              <span>{t("CareerPage:ctatwo")}</span>
+              <div className={styles.bicon}>
+                <div className={styles.bicon__wrapper}>
+                  <div className={styles.icons}>
+                    <Arrow />
+                  </div>
+                  <div className={styles.icons}>
+                    <Arrow />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.mc__two}>
+            <h3 className={styles.mc__h3}>{t("CareerPage:task")}</h3>
+            < className={styles.task}>
+
+            </>
+          </div>
+        </div>
+      </div>
+      <div className={styles.modal__back}></div>
+    </div>
+  );
+};
+
+export default CareerModal;

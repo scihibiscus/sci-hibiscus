@@ -1,0 +1,27 @@
+.footer__section{
+  width: 100%;
+  height: auto;
+  padding: 5rem 0 1rem;
+  background-color: var(--black);
+}
+
+.footer__container{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer__top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__slogan{
+  font-size: var(--40-font-size);
+  text-transform: uppercase;
+  width: 300px;
+  font-weight: 400;
+  co
+}

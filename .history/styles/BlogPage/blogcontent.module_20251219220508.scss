@@ -1,0 +1,41 @@
+.bc__section{
+  width: 100%;
+  height: auto;
+}
+
+.bc__container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.categories{
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+.cat__text{
+  color: var(--black);
+}
+
+.cat__wrapper{
+  width: max-content;
+  height: auto;
+  overflow: scroll;
+}
+
+.cat__slider{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.category{
+  color: var(--black);
+  padding: 1rem;
+}

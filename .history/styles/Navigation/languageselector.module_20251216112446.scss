@@ -1,0 +1,17 @@
+.languageselector{
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: var(--black); //Will be changed
+  
+}
+
+.language{
+  color: white; //Will be changed
+  text-transform: uppercase;
+  font-family: var(--medium-font);
+}

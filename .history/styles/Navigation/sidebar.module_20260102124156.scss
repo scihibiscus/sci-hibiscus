@@ -1,0 +1,13 @@
+.sidebar {
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  background-color: var(--black);
+}
+
+.sidebar__wrapper {
+  padding-top: 5.5rem;
+} 

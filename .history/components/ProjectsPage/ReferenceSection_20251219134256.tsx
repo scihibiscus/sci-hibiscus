@@ -1,0 +1,16 @@
+import React from 'react'
+import styles from "../../styles/ProjectsPage/refsection.module.scss"
+
+const ReferenceSection = () => {
+  return (
+    <div className={styles.ref__section}>
+      <div className={`container ${styles.ref__container}`}>
+        <div className={st}>
+
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ReferenceSection

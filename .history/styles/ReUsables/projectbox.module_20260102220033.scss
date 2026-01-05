@@ -1,0 +1,112 @@
+.project__box{
+  width: 100%;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.pbi__wrap{
+  width: 100%;
+  height: 120%;
+  position: relative;
+}
+
+.pb__image{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pb__img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  img{
+    object-fit: cover;
+  }
+}
+
+.pb__gradient{
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(0deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.pb__content{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.pbc__left{
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pl__span{
+  text-transform: uppercase;
+  color: white;
+  background-color: rgba(0,0,0,0.25);
+  padding: 0.4rem 0.7rem;
+  border-radius: 20px;
+  backdrop-filter: blur(0.3rem);
+  font-size: var(--small-font-size);
+  width: max-content;
+  font-family: var(--medium-font);
+}
+
+.pl__h3{
+  text-transform: uppercase;
+  font-size: var(--50-font-size);
+  color: white;
+  letter-spacing: -2%;
+  line-height: 1;
+}
+
+.pl__p{
+  color: white;
+  font-size: calc(var(--20-font-size) - 0.1rem);
+}
+
+
+//Responsive Design
+@media screen and (max-width: 1160px) {
+  .project__box{
+    height: 600px;
+  }
+
+  .pb__content{
+    padding: 2rem;
+  }
+
+  .pbc__left{
+    width: 70%;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .pb__content{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+  }
+}

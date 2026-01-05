@@ -1,0 +1,62 @@
+import React from 'react'
+
+import ContactBox from './ContactBox'
+import styles from "../../styles/ContactPage/contactsection.module.scss"
+
+const ContactSection = () => {
+  const FormFields = [
+    {
+      id: 1,
+      name: "fullname",
+      type: "text",
+      placeholder: t("Navigation:fullname"),
+      errorMessage: t("Navigation:nameerror"),
+      required: true,
+      minlength: 3,
+      inputState: true,
+    },
+    {
+      id: 2,
+      name: "email",
+      type: "email",
+      placeholder: t("Navigation:emailaddress"),
+      errorMessage: t("Navigation:emailerror"),
+      required: true,
+      inputState: true,
+    },
+    {
+      id: 3,
+      name: "reference",
+      type: "text",
+      placeholder: t("Navigation:reference"),
+      required: false,
+      minlength: 5,
+      inputState: true,
+    },
+    {
+      id: 4,
+      name: "tellmore",
+      type: "text",
+      placeholder: t("Navigation:tellmore"),
+      errorMessage: t("Navigation:messageerror"),
+      required: true,
+      minlength: 70,
+      inputState: false,
+    },
+  ];
+
+  return (
+    <div className={styles.cs__section}>
+      <div className={`container ${styles.cs__container}`}>
+        <div className={styles.cs__left}>
+          <ContactBox />
+        </div>
+        <div className={styles.cs__right}>
+
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ContactSection

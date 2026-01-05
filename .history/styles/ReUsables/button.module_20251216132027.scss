@@ -1,0 +1,51 @@
+.button{
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.25rem;
+  gap: 0.5rem;
+  color: var(--black);
+  background-color: white;
+  width: max-content;
+  font-family: var(--medium-font);
+  border-radius: 12px;
+
+  &:hover{
+    .bicon__wrapper{
+      display: flex;
+      gap: 0;
+      align-items: center;
+      position: relative;
+      left: 0;
+      transition: left 0.5s ease;
+    
+      svg{
+        width: 20px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.bicon{
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bicon__wrapper{
+  display: flex;
+  gap: 0;
+  align-items: center;
+  position: relative;
+  left: 0;
+  transition: left 0.5s ease;
+
+  svg{
+    width: 20px;
+    height: auto;
+  }
+}
+
+
+

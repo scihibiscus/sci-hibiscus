@@ -1,0 +1,52 @@
+.ap__section {
+  width: 100%;
+  height: auto;
+}
+
+.ap__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.apc__top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.apt__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+}
+
+.ap__h1 {
+  font-weight: 400;
+  font-size: var(--40-font-size);
+  color: var(--black);
+  letter-spacing: -1%;
+  line-height: 1.1;
+}
+
+.apt__right {
+  margin-top: 2.25rem;
+}
+
+.apc__bottom {
+  width: 100%;
+  height: auto;
+}
+
+//Responsive Design
+@media screen and (max-width: 1290px) {
+  .apt__left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+  }
+}

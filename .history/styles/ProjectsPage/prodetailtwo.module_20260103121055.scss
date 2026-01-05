@@ -1,0 +1,63 @@
+.pdt__section {
+  color: white;
+  background-color: var(--black);
+  padding: 5rem 0 7rem;
+}
+
+.pdt__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pdc__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.pdc__span,
+.pdc__span2 {
+  font-size: var(--30-font-size);
+}
+
+.pdc__span2{
+  text-align: right;
+}
+
+.pdc__span {
+  text-transform: uppercase;
+}
+
+//Respinsive Design
+@media screen and (max-width: 630px) {
+  .pdc__span,
+  .pdc__span2 {
+    font-size: calc(var(--30-font-size) - 0.2rem);
+  }
+
+  .pdc__content {
+    padding: 1.5rem 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .pdt__section {
+    padding: 5rem 0 5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pdc__span,
+  .pdc__span2 {
+    font-size: calc(var(--30-font-size) - 0.3rem);
+  }
+
+  .pdc__content {
+    padding: 1.25rem 0;
+  }
+}

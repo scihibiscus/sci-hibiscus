@@ -1,0 +1,11 @@
+.vv__image{
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+
+  img{
+    object-fit: cover;
+  }
+}

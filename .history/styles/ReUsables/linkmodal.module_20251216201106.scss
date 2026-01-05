@@ -1,0 +1,95 @@
+.linkmodal {
+  width: 100%;
+  height: auto;
+  padding: 0 0 3.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.lm__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lm__wrapper {
+  margin-left: auto;
+  pointer-events: all;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.lm__button {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background-color: var(--gold);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  // &:hover {
+  //   svg {
+  //     transform: rotate(45deg);
+  //   }
+  // }
+
+  svg {
+    width: 32px;
+    height: auto;
+    // transform: none;
+    // transition: all 0.5s ease;
+  }
+}
+
+.lm__modal{
+  width: max-content;
+  height: auto;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--gold);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.lm__h3{
+  font-size: var(--20-font-size);
+  font-family: var(--medium-font);
+  font-weight: 400;
+  color: white;
+}
+
+.lmm__content{
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.lmm{
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+
+
+  svg{
+    height: 30px;
+    width: auto;
+
+    path{
+      fill: white;
+    }
+  }
+
+  span{
+    color: white;
+    fo
+  }
+}

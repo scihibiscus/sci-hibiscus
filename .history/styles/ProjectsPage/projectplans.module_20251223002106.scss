@@ -1,0 +1,60 @@
+.pp__section{
+  width: 100%;
+  padding: 7rem 0;
+  background-color: var(--black);
+  color: white;
+}
+
+.pp__container{
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.ppc__top{
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pp__h1{
+  font-size: var(--30-font-size);
+  font-weight: 400;
+  color: white;
+  letter-spacing: -1%;
+  line-height: 1.1;
+}
+
+.ppc__bottom{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pcb__wrapper{
+  width: 100%;
+  height: auto;
+  overflow: scroll;
+}
+
+.table{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.table__row{
+  width: 100%;
+  padding: 2rem 1.25rem;
+  display: grid;
+  grid-template-columns: 20fr 14fr 17fr 14fr 21fr 14fr;
+  color: white;
+
+  .
+}

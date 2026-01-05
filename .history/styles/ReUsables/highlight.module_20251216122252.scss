@@ -1,0 +1,11 @@
+.paragraph{
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: var(--20-font-size);
+  color: white;
+}
+
+.highlight{
+  font-family: var(--bold-font);
+}

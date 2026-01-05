@@ -1,0 +1,84 @@
+import React from "react";
+import WordmarkLogo from "@/utils/Icons/WordmarkLogo";
+import LanguageSelector from "@/utils/LanguageSelector";
+import Link from "next/link";
+import styles from "../../styles/Navigation/navbar.module.scss";
+
+const Navbar = ({
+  backColor,
+  hoverColor,
+  textColor,
+  thColor,
+  linkColor,
+  lhColor,
+  logoColor
+}: {
+  backColor: string;
+  hoverColor: string;
+  textColor: string;
+  thColor: string;
+  linkColor: string;
+  lhColor: string;
+  logoColor: string
+}) => {
+  const barStyle = {
+    "--background": backColor,
+    "--backhover": hoverColor,
+    "--color": textColor,
+    "--colorhover": thColor,
+    "--linkcolor": linkColor,
+    "--linkhover": lhColor,
+    ""
+  } as React.CSSProperties;
+
+  const navLinks = [
+    {
+      name: "Projets",
+      link: "/",
+    },
+    {
+      name: "À Propos",
+      link: "/",
+    },
+    {
+      name: "Actualités",
+      link: "/",
+    },
+    {
+      name: "Emploi",
+      link: "/",
+    },
+    {
+      name: "Services",
+      link: "/",
+    },
+  ];
+  return (
+    <>
+      <header className={styles.navigation} style={barStyle}>
+        <div className={`container ${styles.nav__container}`}>
+          <div className={styles.wordmark}>
+            <WordmarkLogo />
+          </div>
+          <div className={styles.navcontent}>
+            <nav className={styles.navc__left}>
+              {navLinks.map((data, i) => (
+                <li key={i}>
+                  <Link href={data.link}>{data.name}</Link>
+                </li>
+              ))}
+            </nav>
+            <div className={styles.navc__right}>
+              <LanguageSelector />
+              <Link href="/" className={styles.contactlink}>
+                <span>Contact</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
+  );
+};
+
+export default Navbar;

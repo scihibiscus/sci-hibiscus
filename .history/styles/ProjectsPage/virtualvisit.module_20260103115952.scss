@@ -1,0 +1,33 @@
+.vv__image{
+  width: 100%;
+  aspect-ratio: 16/8.5;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+
+  img{
+    object-fit: cover;
+  }
+}
+
+.vv__section{
+  width: 100%;
+  padding: 7rem 0 !important;
+}
+
+//Responsive Design
+@media screen and (max-width: 1024px) {
+  .vv__image{
+    aspect-ratio: 16/10;
+  }
+
+  .vv__section{
+    padding: 6.5rem 0 !important;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .vv__image{
+    aspect-ratio: 16/13;
+  }
+}

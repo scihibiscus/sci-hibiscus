@@ -1,0 +1,18 @@
+.pdo__section{
+  width: 100%;
+  height: auto;
+}
+
+.pdo__container{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem
+}
+
+.pd__top, .pd__bottom{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5rem
+}
+
+.pt__left

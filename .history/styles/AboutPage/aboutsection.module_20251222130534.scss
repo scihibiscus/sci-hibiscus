@@ -1,0 +1,38 @@
+.about__section{
+  width: 100%;
+}
+
+.about__container{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem
+}
+
+.as__top{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.ast__top{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.asb__h3{
+  font-size: var(--50-font-size);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -1%;
+  color: var(--black);
+}
+
+.ast__bottom{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+  column-gap: 3.5rem;
+}

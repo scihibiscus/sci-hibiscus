@@ -1,0 +1,67 @@
+.navigation {
+  width: 100%;
+  height: auto;
+  padding: 2rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.wordmark {
+  svg {
+    width: 200px;
+    height: auto;
+
+    path {
+      fill: var(--black) !important;
+    }
+  }
+}
+
+.navcontent {
+  display: flex;
+  gap: 3.25rem;
+  align-items: center;
+}
+
+.navc__left {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+
+  li {
+    list-style: none;
+
+    a {
+      color: var(--black);
+      font-family: var(--medium-font);
+      transition: color 0.5s ease;
+
+      
+    }
+  }
+}
+
+.navc__right{
+  display: flex;
+  gap: 0.5rem
+}
+
+.contactlink{
+  padding: 0.5rem 1rem;
+  background-color: var(--black);
+  border-radius: 40px;
+
+  a{
+    color: white;
+    font-family: var(--medium-font);
+  }
+}

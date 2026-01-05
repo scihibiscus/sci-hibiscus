@@ -1,0 +1,48 @@
+import React from 'react'
+import { StaticImageData } from 'next/image';
+import IMAGE from "../../public/images/heroimage.jpg"
+import Image from "next/image";
+import Link from 'next/link';
+import styles from "../../styles/ReUsables/blogcard.module.scss"
+
+interface BlogInterface {
+  image: sta,
+      tag: "Guide",
+      date: "27 Novembre 2025",
+      title: t("HomePage:blogtitle2"),
+      cta: t("HomePage:blogcta2"),
+      link: "/",
+}
+
+
+const BlogCard = ({data}: {data: }) => {
+  return (
+    <div className={styles.blogcard}>
+      <div className={styles.bc__image}>
+        <div className={styles.bc__img}>
+          <Image
+            fill
+            placeholder="blur"
+            alt="Sci Hibiscus"
+            src={IMAGE}
+            quality={100}
+          />
+        </div>
+        <div className={styles.bc__gradient}></div>
+        <div className={styles.bc__gradient2}></div>
+      </div>
+      <div className={styles.bc__content}>
+        <div className={styles.bcc__top}>
+          <span className={styles.bc__tag}>Guide</span>
+          <span className={styles.bc__date}>27 November 2025</span>
+        </div>
+        <div className={styles.bcc__bottom}>
+          <h3 className={styles.bcc__h3}>Comment investir dans l'immobilier locatif en 2025</h3>
+          <Link href="/" className={styles.bcc__link}>Lire la suite</Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default BlogCard

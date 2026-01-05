@@ -1,0 +1,18 @@
+.ps__section {
+  padding: 7rem 0;
+}
+
+//Responsive Design
+@media screen and (max-width: 1024px) {
+  .ps__section {
+    padding: 6.5rem 0;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .ps__section {
+    padding: 6.5rem 0;
+  }
+}
+
