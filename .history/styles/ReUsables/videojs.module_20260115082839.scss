@@ -20,11 +20,9 @@
 
 /* poster fix */
 .video__wrapper :global(.vjs-poster) {
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center center;
 
-  img{
-    object-fit: cover;
+
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
   }
 }
