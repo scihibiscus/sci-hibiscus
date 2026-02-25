@@ -31,9 +31,8 @@
 }
 
 .footer__logo {
-  width: 50%;
   svg {
-    width: 100%;
+    width: 50%;
     height: auto;
   }
 }
@@ -275,10 +274,9 @@
   }
 
   .footer__logo {
-    width: 50%;
     svg {
-      width: 100%;
-      height: auto;
+      height: 70px;
+      width: auto;
     }
   }
 
@@ -356,7 +354,6 @@
 
   .footer__logo{
     order: 1;
-    width: 80%;
   }
 
   .fb__right {
