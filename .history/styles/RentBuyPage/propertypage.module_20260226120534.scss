@@ -1,0 +1,75 @@
+.rb__section {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-top: 2rem;
+}
+
+.rb__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.filter__sort {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.filter__button {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.25rem;
+  gap: 0.5rem;
+  color: white;
+  background-color: var(--black);
+  width: max-content;
+  font-family: var(--medium-font);
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,0.25);
+    color: var(--black);
+
+    .f__icon {
+      svg {
+        path {
+          fill: var(--black);
+        }
+      }
+    }
+  }
+
+}
+
+.sort__button{
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.25rem;
+  gap: 0.5rem;
+  color: var(--black);
+  background-color: transparent;
+  width: max-content;
+  font-family: var(--medium-font);
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.25);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.f__icon {
+  position: relative;
+  top: 2px;
+
+  svg {
+    width: 20px;
+    height: auto;
+  }
+}

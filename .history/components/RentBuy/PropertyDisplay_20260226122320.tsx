@@ -1,0 +1,44 @@
+import React from "react";
+import Plus from "@/utils/Icons/Plus";
+import Angle from "@/utils/Icons/Angle";
+import { useTranslation } from "react-i18next";
+import Ascending from "@/utils/Icons/Ascending";
+import Descending from "@/utils/Icons/Descending";
+import styles from "../../styles/RentBuyPage/propertypage.module.scss";
+
+const PropertyDisplay = () => {
+  //Translations
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
+  return (
+    <div className={styles.rb__section}>
+      <div className={`container ${styles.rb__container}`}>
+        <div className={styles.filter__sort}>
+          <div className={styles.filter__button}>
+            <span className={styles.f__name}>{t("ServicesPage:filter")}</span>
+            <span className={styles.f__icon}>
+              <Plus />
+            </span>
+          </div>
+          <div className={styles.sort__wrapper}>
+            <div className={styles.sort__button}>
+              <span className={styles.f__name}>{t("ServicesPage:sort")}</span>
+              <span className={styles.f__icon}>
+                <Angle />
+              </span>
+            </div>
+            <div className={styles.sorting__box}>
+              <div className={styles.f} id="price__asc"><span className={styles.f__name}>{t("ServicesPage:filter")}</span>
+            <span className={styles.f__icon}>
+              <Plus />
+            </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PropertyDisplay;

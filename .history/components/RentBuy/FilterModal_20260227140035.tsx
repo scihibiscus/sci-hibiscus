@@ -1,0 +1,125 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import Plus from "@/utils/Icons/Plus";
+import styles from "../../styles/RentBuyPage/filtermodal.module.scss";
+
+const FilterModal = () => {
+  //Translations
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
+  const spaceFilter = {
+    name: t("ServicesPage:typeproperty"),
+    filters: [
+      {
+        id: 1,
+        value: t("ServicesPage:appartment"),
+      },
+      {
+        id: 2,
+        value: t("ServicesPage:house"),
+      },
+      {
+        id: 3,
+        value: t("ServicesPage:villa"),
+      },
+      {
+        id: 4,
+        value: t("ServicesPage:office"),
+      },
+      {
+        id: 5,
+        value: t("ServicesPage:magasin"),
+      },
+      {
+        id: 6,
+        value: t("ServicesPage:land"),
+      },
+    ],
+  };
+
+  const locationFilter = {
+    name: t("ServicesPage:location"),
+    filters: [
+      {
+        id: 1,
+        value: "Yaounde",
+      },
+      {
+        id: 2,
+        value: "Douala",
+      },
+      {
+        id: 3,
+        value: "Kribi",
+      },
+      {
+        id: 4,
+        value: "Bafoussam",
+      },
+      {
+        id: 5,
+        value: "Nkongsamba",
+      },
+      {
+        id: 6,
+        value: "Ngaoundere",
+      },
+      {
+        id: 7,
+        value: "Garoua",
+      },
+    ],
+  };
+
+  const priceFilter = {
+    name: t("ServicesPage:pricefcfa"),
+    filters: [
+      {
+        id: 1,
+        value: "<300k",
+      },
+      {
+        id: 2,
+        value: "300k - 500k",
+      },
+      {
+        id: 3,
+        value: "500k - 1M",
+      },
+      {
+        id: 4,
+        value: "1M - 10M",
+      },
+      {
+        id: 5,
+        value: "10M>",
+      },
+    ],
+  };
+
+  return (
+    <div className={styles.filter__modal}>
+      <div className={styles.modal__content}>
+        <div className={styles.modal__container}>
+          <div className={styles.modal__top}>
+            <span className={styles.m__name}>{t("ServicesPage:filter")}</span>
+            <span className={styles.modal__cancel}>
+              <Plus />
+            </span>
+          </div>
+        </div>
+        <div className={styles.modal__bottom}>
+          <div className={styles.modal__container}>
+            <span>{spaceFilter.name}</span>
+            <div className={styles.s}>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FilterModal;

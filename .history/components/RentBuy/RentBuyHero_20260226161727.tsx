@@ -1,0 +1,20 @@
+import React from 'react'
+
+interface HeroProps {
+  text: string;
+  heading: string;
+}
+
+const RentBuyHero = ({
+  content,
+}: {
+  content: HeroProps;
+}) => {
+  return (
+    <div className={StyleSheet.}>
+
+    </div>
+  )
+}
+
+export default RentBuyHero
