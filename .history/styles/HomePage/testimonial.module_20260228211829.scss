@@ -1,0 +1,41 @@
+.testi__section {
+  width: 100%;
+  height: auto;
+  padding: 7rem 0 !important;
+}
+
+.testi__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.testi__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+}
+
+.testi__h1 {
+  font-weight: 400;
+  font-size: var(--40-font-size);
+  color: var(--black);
+  letter-spacing: -1%;
+  line-height: 1.1;
+}
+
+.testi__bottom{
+  width: 100%;
+  height: auto;
+}
+
+.testi__card{
+  width: 400px;
+  aspect-ratio: 16/12;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  position: relative;
+}
+
