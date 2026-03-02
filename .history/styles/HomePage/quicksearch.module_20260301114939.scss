@@ -1,0 +1,27 @@
+.qs__section{
+  width: 100%;
+  height: auto;
+}
+
+.qs__container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.qs__top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 40%;
+}
+
+.qs__h1 {
+  font-weight: 400;
+  font-size: var(--40-font-size);
+  color: var(--black);
+  letter-spacing: -1%;
+}
