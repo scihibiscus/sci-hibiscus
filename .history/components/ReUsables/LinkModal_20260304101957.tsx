@@ -173,12 +173,7 @@ const LinkModal = ({
                 </div>
                 <span>{t("HomePage:modaloffer")}</span>
               </Link>
-              <div
-                className={styles.lmm}
-                onClick={() => {
-                  setActiveModal(false), handleLenisScroll;
-                }}
-              >
+              <div className={styles.lmm} onClick={() => {setActiveModal(false), handleLenisScroll}}>
                 <div>
                   <NewsLetter />
                 </div>

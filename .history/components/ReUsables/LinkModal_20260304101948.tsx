@@ -69,6 +69,77 @@ const LinkModal = ({
                     : "/fr/services?transaction=louer"
                 }
                 className={styles.lmm}
+                onClick={() => setActiveModal(false)}
+              >
+                <div>
+                  <Key />
+                </div>
+                <span>{t("Navigation:proprent")}</span>
+              </Link>
+              <Link
+                href={
+                  currentLocale === "en"
+                    ? "/en/services?transaction=sale"
+                    : "/fr/services?transaction=vendre"
+                }
+                className={styles.lmm}
+                onClick={() => setActiveModal(false)}
+              >
+                <div>
+                  <Tag />
+                </div>
+                <span>{t("Navigation:propsale")}</span>
+              </Link>
+
+              <Link
+                href={
+                  currentLocale === "en"
+                    ? "/en/offer-land"
+                    : "/fr/offrir-terrain"
+                }
+                className={styles.lmm}
+                onClick={() => setActiveModal(false)}
+              >
+                <div>
+                  <SellHome />
+                </div>
+                <span>{t("HomePage:modaloffer")}</span>
+              </Link>
+              <div className={styles.lmm} onClick={() => {setActiveModal(false), handleLenisScroll}}>
+                <div>
+                  <NewsLetter />
+                </div>
+                <span>{t("HomePage:modalsub")}</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.lm__button}>
+            <span className={styles.lm__icon}>
+              <Plus />
+            </span>
+          </div>
+        </div>
+        <div
+          className={`${styles.lm__wrappermobile} ${
+            activeModal ? styles.activemodal : ""
+          }`}
+        >
+          <div className={styles.lm__modal}>
+            <h3 className={styles.lm__h3}>{t("HomePage:modalquick")}</h3>
+            <div className={styles.lmm__content}>
+              {/* <Link href={`/${currentLocale}/contact`} className={styles.lmm}>
+                <div>
+                  <Contact />
+                </div>
+                <span>{t("HomePage:modalcontact")}</span>
+              </Link> */}
+              <Link
+                href={
+                  currentLocale === "en"
+                    ? "/en/services?transaction=rent"
+                    : "/fr/services?transaction=louer"
+                }
+                className={styles.lmm}
               >
                 <div>
                   <Key />
@@ -109,20 +180,6 @@ const LinkModal = ({
                 <span>{t("HomePage:modalsub")}</span>
               </div>
             </div>
-          </div>
-          <div className={styles.lm__button}>
-            <span className={styles.lm__icon}>
-              <Plus />
-            </span>
-          </div>
-        </div>
-        <div
-          className={`${styles.lm__wrappermobile} ${
-            activeModal ? styles.activemodal : ""
-          }`}
-        >
-          <div className={styles.lm__modal}>
-            <h3 className={styles.lm__h3}>{t("HomePage:modalquick")}</h3>
             <div className={styles.lmm__content}>
               {/* <Link href={`/${currentLocale}/contact`} className={styles.lmm}>
                 <div>
@@ -173,12 +230,7 @@ const LinkModal = ({
                 </div>
                 <span>{t("HomePage:modaloffer")}</span>
               </Link>
-              <div
-                className={styles.lmm}
-                onClick={() => {
-                  setActiveModal(false), handleLenisScroll;
-                }}
-              >
+              <div className={styles.lmm} onClick={() => {setActiveModal(false), handleLenisScroll}}>
                 <div>
                   <NewsLetter />
                 </div>

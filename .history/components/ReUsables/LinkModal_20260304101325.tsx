@@ -69,6 +69,7 @@ const LinkModal = ({
                     : "/fr/services?transaction=louer"
                 }
                 className={styles.lmm}
+                onClick={() => setA}
               >
                 <div>
                   <Key />
@@ -137,7 +138,6 @@ const LinkModal = ({
                     : "/fr/services?transaction=louer"
                 }
                 className={styles.lmm}
-                onClick={() => setActiveModal(false)}
               >
                 <div>
                   <Key />
@@ -151,7 +151,6 @@ const LinkModal = ({
                     : "/fr/services?transaction=vendre"
                 }
                 className={styles.lmm}
-                onClick={() => setActiveModal(false)}
               >
                 <div>
                   <Tag />
@@ -166,19 +165,13 @@ const LinkModal = ({
                     : "/fr/offrir-terrain"
                 }
                 className={styles.lmm}
-                onClick={() => setActiveModal(false)}
               >
                 <div>
                   <SellHome />
                 </div>
                 <span>{t("HomePage:modaloffer")}</span>
               </Link>
-              <div
-                className={styles.lmm}
-                onClick={() => {
-                  setActiveModal(false), handleLenisScroll;
-                }}
-              >
+              <div className={styles.lmm} onClick={handleLenisScroll}>
                 <div>
                   <NewsLetter />
                 </div>
