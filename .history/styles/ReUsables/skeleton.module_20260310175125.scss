@@ -57,14 +57,14 @@
     );
     animation: skeleton-wave 1.5s ease-in-out infinite;
 
-    // @media (prefers-color-scheme: dark) {
-    //   background: linear-gradient(
-    //     90deg,
-    //     transparent,
-    //     rgba(255, 255, 255, 0.1),
-    //     transparent
-    //   );
-    // }
+    @media (prefers-color-scheme: dark) {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+    }
   }
 }
 
