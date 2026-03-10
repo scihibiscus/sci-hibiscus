@@ -1,0 +1,85 @@
+import { defineType, defineField } from "sanity";
+import { HomeIcon } from "@sanity/icons";
+
+export const property = defineType({
+  name: "property",
+  title: "Property",
+  type: "document",
+  icon: HomeIcon,
+  fieldsets: [
+    {
+      name: "keydetails",
+      title: "Key Details",
+      options: { collapsible: true, collapsed: false },
+    },
+  ],
+  fields: [
+    defineField({
+      name: "name",
+      title: "Property Name",
+      type: "string",
+      validation: (rule) =>
+        rule
+          .required()
+          .min(3)
+          .max(96)
+          .error("Property Name should be between 3 - 96 characters."),
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "name", maxLength: 96 },
+      validation: (rule) => rule.required().error("Required"),
+    }),
+    defineField({
+      name: "publishedAt",
+      title: "Published At",
+      type: "datetime",
+      initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
+      name: "available",
+      title: "Available",
+      type: "boolean",
+      initialValue: true,
+      validation: (rule) =>
+        rule
+          .required()
+          .error("Required")
+    }),
+    defineField({
+      name: "transaction",
+      title: "Transaction",
+      type: "reference",
+    }),
+    defineField({
+      name: "price",
+      title: "Price (FCFA)",
+      type: "number",
+      validation: (rule) => rule.required().error("Required")
+    }),
+    defineField({
+      name: "rentpricing",
+      title: "Rent Pricing",
+      type: "string",
+      options: {
+        list: [
+          {
+            title: "Per Day",
+            value: "perday"
+          },
+          {
+            title: "Per Week",
+            value: "perweek"
+          },
+          {
+            title: "Per Month",
+            value: "permonth"
+          }
+        ],
+        layout: "dropdown"
+      }
+    })
+  ],
+});

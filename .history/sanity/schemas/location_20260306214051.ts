@@ -1,0 +1,6 @@
+import { defineType, defineField } from "sanity";
+
+export const location = defineType({
+  name: "location",
+  ti
+})

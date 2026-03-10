@@ -1,0 +1,586 @@
+// "use client";
+
+// import React, { useState, useEffect } from "react";
+// import Plus from "@/utils/Icons/Plus";
+// import Angle from "@/utils/Icons/Angle";
+// import { useTranslation } from "react-i18next";
+// import Ascending from "@/utils/Icons/Ascending";
+// import Descending from "@/utils/Icons/Descending";
+// import FilterModal from "./FilterModal";
+// import { StaticImageData } from "next/image";
+// import { AnimatePresence } from "framer-motion";
+// import PropertyCard from "./PropertyCard";
+// import { LocationsData, TransactionData } from "@/types";
+// import styles from "../../styles/RentBuyPage/propertypage.module.scss";
+// import { client } from "@/sanity/lib/client";
+
+// interface PropertyProps {
+//   image: StaticImageData;
+//   status: string;
+//   rentStatus?: string;
+//   name: string;
+//   location: string;
+//   price: number;
+//   keyData: {
+//     type: string;
+//     rooms?: number;
+//     bath?: number;
+//     living?: number;
+//     area?: number;
+//   };
+// }
+
+// const PropertyDisplay = ({
+//   propertyData,
+//   transactions,
+//   locations,
+//   propertytypes,
+// }: {
+//   propertyData: PropertyProps[];
+//   transactions: TransactionData[];
+//   locations: LocationsData[];
+//   propertytypes: TransactionData[];
+// }) => {
+//   //Translations
+//   const { t, i18n } = useTranslation();
+//   const currentLocale = i18n.language;
+
+//   const [activeSort, setActiveSort] = useState(false);
+//   const [selectedSort, setSelectedSort] = useState(-1);
+//   const [activeModal, setActiveModal] = useState(false);
+//   const [properties, setProperties] = useState([]);
+//   const [loading, setLoading] = useState(false);
+
+//   const query = `*[_type == "property" && available] | order(publishedAt desc){
+//   name,
+//     slug,
+//     price,
+//     quarter,
+//     transaction-> {
+//       nameen,
+//       namefr,
+//       slug
+//     },
+//     city->{
+//       cityname,
+//       slug
+//     },
+//     area,
+//     mainimage,
+//     propertytype-> {
+//       nameen,
+//       namefr,
+//       slug
+//     },
+//     bath,
+//     parlour,
+//     room
+// }`;
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       setLoading(true);
+//       try {
+//         const response = await client.fetch(query)
+//         console.log(response)
+//       } catch (error) {
+//         console.error("Property fetching error:", error)
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <>
+//       <div className={styles.rb__section}>
+//         <div className={`container ${styles.rb__container}`}>
+//           <div className={styles.filter__sort}>
+//             {/**Filter Button */}
+//             <div
+//               className={styles.filter__button}
+//               onClick={() => setActiveModal(!activeModal)}
+//             >
+//               <span className={styles.f__name}>{t("ServicesPage:filter")}</span>
+//               <span className={styles.f__icon}>
+//                 <Plus />
+//               </span>
+//             </div>
+//             <div className={styles.sort__wrapper}>
+//               <div
+//                 className={`${styles.sort__button} ${
+//                   activeSort ? styles.active__sort : ""
+//                 }`}
+//                 onClick={() => setActiveSort(!activeSort)}
+//               >
+//                 <span className={styles.f__name}>{t("ServicesPage:sort")}</span>
+//                 <span className={styles.f__icon}>
+//                   <Angle />
+//                 </span>
+//               </div>
+//               <div
+//                 className={`${styles.sorting__box} ${
+//                   activeSort ? styles.active__box : ""
+//                 }`}
+//               >
+//                 <div
+//                   className={`${styles.sorter} ${
+//                     selectedSort === 0 ? styles.active__sorter : ""
+//                   }`}
+//                   id="price__asc"
+//                   onClick={() => {
+//                     setActiveSort(false);
+//                     setSelectedSort(0);
+//                   }}
+//                 >
+//                   <span className={styles.f__icon}>
+//                     <Ascending />
+//                   </span>
+//                   <span className={styles.f__name}>
+//                     {t("ServicesPage:price")}
+//                   </span>
+//                 </div>
+//                 <div
+//                   className={`${styles.sorter} ${
+//                     selectedSort === 1 ? styles.active__sorter : ""
+//                   }`}
+//                   id="price__des"
+//                   onClick={() => {
+//                     setActiveSort(false);
+//                     setSelectedSort(1);
+//                   }}
+//                 >
+//                   <span className={styles.f__icon}>
+//                     <Descending />
+//                   </span>
+//                   <span className={styles.f__name}>
+//                     {t("ServicesPage:price")}
+//                   </span>
+//                 </div>
+//                 <div
+//                   className={`${styles.sorter} ${
+//                     selectedSort === 2 ? styles.active__sorter : ""
+//                   }`}
+//                   id="area__asc"
+//                   onClick={() => {
+//                     setActiveSort(false);
+//                     setSelectedSort(2);
+//                   }}
+//                 >
+//                   <span className={styles.f__icon}>
+//                     <Ascending />
+//                   </span>
+//                   <span className={styles.f__name}>
+//                     {t("ServicesPage:surface")}
+//                   </span>
+//                 </div>
+//                 <div
+//                   className={`${styles.sorter} ${
+//                     selectedSort === 3 ? styles.active__sorter : ""
+//                   }`}
+//                   id="area__des"
+//                   onClick={() => {
+//                     setActiveSort(false);
+//                     setSelectedSort(3);
+//                   }}
+//                 >
+//                   <span className={styles.f__icon}>
+//                     <Descending />
+//                   </span>
+//                   <span className={styles.f__name}>
+//                     {t("ServicesPage:surface")}
+//                   </span>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//           <div className={styles.properties}>
+//             {propertyData.map((data, i) => (
+//               <PropertyCard data={data} key={i} />
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//       <AnimatePresence mode="wait">
+//         {activeModal && (
+//           <FilterModal
+//             activeModal={activeModal}
+//             setActiveModal={setActiveModal}
+//             transactions={transactions}
+//             locations={locations}
+//             propertytypes={propertytypes}
+//           />
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// };
+
+// export default PropertyDisplay;
+// PropertyDisplay.tsx (updated)
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Plus from "@/utils/Icons/Plus";
+import Angle from "@/utils/Icons/Angle";
+import { useTranslation } from "react-i18next";
+import Ascending from "@/utils/Icons/Ascending";
+import Descending from "@/utils/Icons/Descending";
+import FilterModal from "./FilterModal";
+import { AnimatePresence } from "framer-motion";
+import PropertyCard from "./PropertyCard";
+import { LocationsData, TransactionData } from "@/types";
+import styles from "../../styles/RentBuyPage/propertypage.module.scss";
+import { client } from "@/sanity/lib/client";
+import { useSearchParams } from "next/navigation";
+
+interface PropertyProps {
+  // adjust to the shape you expect after GROQ mapping
+  name: string;
+  slug?: { current?: string } | string;
+  price?: number;
+  quarter?: string;
+  transaction?: string | { slug?: string };
+  city?: string | { slug?: string; cityname?: string };
+  area?: number;
+  mainimage?: any;
+  propertytype?: string | { slug?: string };
+  bath?: number;
+  parlour?: number;
+  room?: number;
+}
+
+const PropertyDisplay = ({
+  propertyData,
+  transactions,
+  locations,
+  propertytypes,
+}: {
+  propertyData: PropertyProps[]; // initial / fallback data
+  transactions: TransactionData[];
+  locations: LocationsData[];
+  propertytypes: TransactionData[];
+}) => {
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
+  const [activeSort, setActiveSort] = useState(false);
+  const [selectedSort, setSelectedSort] = useState(-1);
+  const [activeModal, setActiveModal] = useState(false);
+  const [properties, setProperties] = useState<PropertyProps[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  // App Router search params
+  const searchParams = useSearchParams();
+
+  /* -----------------------
+     Helpers: parse search params
+  ------------------------*/
+  const parseCommaParam = (raw: string | null) => {
+    if (!raw) return [];
+    return raw.split(",").map((s) => decodeURIComponent(s));
+  };
+
+  // parse price/area token into numeric ranges
+  type Range = { min?: number; max?: number };
+  const parseRangeToken = (token: string): Range => {
+    if (!token) return {};
+    const t = token.trim();
+    if (t.includes("+")) {
+      const v = Number(t.replace("+", "").replace(/\D/g, ""));
+      return { min: Number.isFinite(v) ? v : undefined };
+    }
+    if (t.includes("-")) {
+      const parts = t.split("-").map((p) => Number(p.replace(/\D/g, "")));
+      return { min: parts[0] || undefined, max: parts[1] || undefined };
+    }
+    return {};
+  };
+
+  /* -----------------------
+     Build filters object from searchParams
+  ------------------------*/
+  const buildFiltersFromParams = () => {
+    const f: {
+      transactions?: string[];
+      types?: string[];
+      cities?: string[];
+      priceRanges?: Range[];
+      areaRanges?: Range[];
+    } = {};
+
+    if (!searchParams) return f;
+
+    const transRaw = searchParams.get("transaction");
+    const typesRaw = searchParams.get("type");
+    const cityRaw = searchParams.get("city");
+    const priceRaw = searchParams.get("price");
+    const areaRaw = searchParams.get("area");
+
+    const trans = parseCommaParam(transRaw);
+    if (trans.length) f.transactions = trans;
+
+    const types = parseCommaParam(typesRaw);
+    if (types.length) f.types = types;
+
+    const cities = parseCommaParam(cityRaw);
+    if (cities.length) f.cities = cities;
+
+    const priceTokens = parseCommaParam(priceRaw);
+    if (priceTokens.length) {
+      f.priceRanges = priceTokens.map((tok) => parseRangeToken(tok));
+    }
+
+    const areaTokens = parseCommaParam(areaRaw);
+    if (areaTokens.length) {
+      f.areaRanges = areaTokens.map((tok) => parseRangeToken(tok));
+    }
+
+    return f;
+  };
+
+  /* -----------------------
+     Build GROQ query dynamically & params
+     (parameterized to avoid injection)
+  ------------------------*/
+  const buildGROQ = (filters: ReturnType<typeof buildFiltersFromParams>) => {
+    const conditions: string[] = ["available == true"]; // base condition
+    const params: Record<string, any> = {};
+
+    if (filters.transactions?.length) {
+      params.transactionSlugs = filters.transactions;
+      conditions.push("transaction->slug.current in $transactionSlugs");
+    }
+
+    if (filters.types?.length) {
+      params.typeSlugs = filters.types;
+      conditions.push("propertytype->slug.current in $typeSlugs");
+    }
+
+    if (filters.cities?.length) {
+      params.citySlugs = filters.cities;
+      conditions.push("city->slug.current in $citySlugs");
+    }
+
+    // price ranges -> OR clauses
+    if (filters.priceRanges?.length) {
+      const priceClauses: string[] = [];
+      filters.priceRanges.forEach((r, idx) => {
+        if (r.min != null && r.max != null) {
+          params[`pmin${idx}`] = r.min;
+          params[`pmax${idx}`] = r.max;
+          priceClauses.push(`(price >= $pmin${idx} && price <= $pmax${idx})`);
+        } else if (r.min != null) {
+          params[`pmin${idx}`] = r.min;
+          priceClauses.push(`(price >= $pmin${idx})`);
+        } else if (r.max != null) {
+          params[`pmax${idx}`] = r.max;
+          priceClauses.push(`(price <= $pmax${idx})`);
+        }
+      });
+      if (priceClauses.length) conditions.push("(" + priceClauses.join(" || ") + ")");
+    }
+
+    // area ranges
+    if (filters.areaRanges?.length) {
+      const areaClauses: string[] = [];
+      filters.areaRanges.forEach((r, idx) => {
+        if (r.min != null && r.max != null) {
+          params[`amin${idx}`] = r.min;
+          params[`amax${idx}`] = r.max;
+          areaClauses.push(`(area >= $amin${idx} && area <= $amax${idx})`);
+        } else if (r.min != null) {
+          params[`amin${idx}`] = r.min;
+          areaClauses.push(`(area >= $amin${idx})`);
+        } else if (r.max != null) {
+          params[`amax${idx}`] = r.max;
+          areaClauses.push(`(area <= $amax${idx})`);
+        }
+      });
+      if (areaClauses.length) conditions.push("(" + areaClauses.join(" || ") + ")");
+    }
+
+    // combine conditions
+    const whereClause = conditions.length ? "&& " + conditions.join(" && ") : "";
+
+    // sorting
+    let order = " | order(publishedAt desc)"; // default
+    if (selectedSort === 0) order = " | order(price asc)";
+    if (selectedSort === 1) order = " | order(price desc)";
+    if (selectedSort === 2) order = " | order(area asc)";
+    if (selectedSort === 3) order = " | order(area desc)";
+
+    const query = `*[_type == "property" ${whereClause}]${order}{
+      _id,
+      name,
+      "slug": slug.current,
+      price,
+      quarter,
+      "transaction": transaction->slug.current,
+      "transactionName": transaction->name,
+      "city": city->slug.current,
+      "cityName": city->cityname,
+      area,
+      mainimage,
+      "propertytype": propertytype->slug.current,
+      "propertytypeName": propertytype->name,
+      bath,
+      parlour,
+      room
+    }`;
+
+    return { query, params };
+  };
+
+  /* -----------------------
+     Effect: build filters -> query -> fetch
+  ------------------------*/
+  useEffect(() => {
+    const fetchFiltered = async () => {
+      setLoading(true);
+      try {
+        const filters = buildFiltersFromParams();
+        const { query: groqQuery, params } = buildGROQ(filters);
+        // fetch from Sanity
+        const res = await client.fetch(groqQuery, params);
+        setProperties(res || []);
+        console.log(res)
+      } catch (err) {
+        console.error("Error fetching properties with filters:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFiltered();
+    // react on searchParams string and selectedSort
+  }, [searchParams?.toString(), selectedSort]);
+
+  /* -----------------------
+     Render
+  ------------------------*/
+  return (
+    <>
+      <div className={styles.rb__section}>
+        <div className={`container ${styles.rb__container}`}>
+          <div className={styles.filter__sort}>
+            {/* Filter Button */}
+            <div
+              className={styles.filter__button}
+              onClick={() => setActiveModal(!activeModal)}
+            >
+              <span className={styles.f__name}>{t("ServicesPage:filter")}</span>
+              <span className={styles.f__icon}>
+                <Plus />
+              </span>
+            </div>
+
+            {/* Sort UI */}
+            <div className={styles.sort__wrapper}>
+              <div
+                className={`${styles.sort__button} ${
+                  activeSort ? styles.active__sort : ""
+                }`}
+                onClick={() => setActiveSort(!activeSort)}
+              >
+                <span className={styles.f__name}>{t("ServicesPage:sort")}</span>
+                <span className={styles.f__icon}>
+                  <Angle />
+                </span>
+              </div>
+              <div
+                className={`${styles.sorting__box} ${
+                  activeSort ? styles.active__box : ""
+                }`}
+              >
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 0 ? styles.active__sorter : ""
+                  }`}
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(0);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Ascending />
+                  </span>
+                  <span className={styles.f__name}>{t("ServicesPage:price")}</span>
+                </div>
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 1 ? styles.active__sorter : ""
+                  }`}
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(1);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Descending />
+                  </span>
+                  <span className={styles.f__name}>{t("ServicesPage:price")}</span>
+                </div>
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 2 ? styles.active__sorter : ""
+                  }`}
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(2);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Ascending />
+                  </span>
+                  <span className={styles.f__name}>{t("ServicesPage:surface")}</span>
+                </div>
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 3 ? styles.active__sorter : ""
+                  }`}
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(3);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Descending />
+                  </span>
+                  <span className={styles.f__name}>{t("ServicesPage:surface")}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Properties list */}
+          <div className={styles.properties}>
+            {loading ? (
+              <p>Loading...</p>
+            ) : properties.length ? (
+              properties.map((p: any) => <PropertyCard data={propertyData[0]} key={p._id} />)
+            ) : (
+              <p>{t("ServicesPage:noresults")}</p>
+            )}
+          </div>
+        </div>
+      </div>
+    
+
+      <AnimatePresence mode="wait">
+        {activeModal && (
+          <FilterModal
+            activeModal={activeModal}
+            setActiveModal={setActiveModal}
+            transactions={transactions}
+            locations={locations}
+            propertytypes={propertytypes}
+          />
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default PropertyDisplay;

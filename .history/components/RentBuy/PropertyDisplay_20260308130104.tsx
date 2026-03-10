@@ -1,0 +1,219 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Plus from "@/utils/Icons/Plus";
+import Angle from "@/utils/Icons/Angle";
+import { useTranslation } from "react-i18next";
+import Ascending from "@/utils/Icons/Ascending";
+import Descending from "@/utils/Icons/Descending";
+import FilterModal from "./FilterModal";
+import { StaticImageData } from "next/image";
+import { AnimatePresence } from "framer-motion";
+import PropertyCard from "./PropertyCard";
+import { LocationsData, TransactionData } from "@/types";
+import styles from "../../styles/RentBuyPage/propertypage.module.scss";
+import { client } from "@/sanity/lib/client";
+
+interface PropertyProps {
+  image: StaticImageData;
+  status: string;
+  rentStatus?: string;
+  name: string;
+  location: string;
+  price: number;
+  keyData: {
+    type: string;
+    rooms?: number;
+    bath?: number;
+    living?: number;
+    area?: number;
+  };
+}
+
+const PropertyDisplay = ({
+  propertyData,
+  transactions,
+  locations,
+  propertytypes,
+}: {
+  propertyData: PropertyProps[];
+  transactions: TransactionData[];
+  locations: LocationsData[];
+  propertytypes: TransactionData[];
+}) => {
+  //Translations
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
+  const [activeSort, setActiveSort] = useState(false);
+  const [selectedSort, setSelectedSort] = useState(-1);
+  const [activeModal, setActiveModal] = useState(false);
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const query = `*[_type == "property" && available] | order(publishedAt desc){
+  name,
+    slug,
+    price,
+    quarter,
+    transaction-> {
+      nameen,
+      namefr,
+      slug
+    },
+    city->{
+      cityname,
+      slug
+    },
+    area,
+    mainimage,
+    propertytype-> {
+      nameen,
+      namefr,
+      slug
+    },
+    bath,
+    parlour,
+    room
+}`;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await client.fetch(query)
+        console.log(re)
+      } catch (error) {
+        console.error("Property fetching error:", error)
+      } finally {
+        setLoading(false);
+      }
+    };
+  }, []);
+
+  return (
+    <>
+      <div className={styles.rb__section}>
+        <div className={`container ${styles.rb__container}`}>
+          <div className={styles.filter__sort}>
+            {/**Filter Button */}
+            <div
+              className={styles.filter__button}
+              onClick={() => setActiveModal(!activeModal)}
+            >
+              <span className={styles.f__name}>{t("ServicesPage:filter")}</span>
+              <span className={styles.f__icon}>
+                <Plus />
+              </span>
+            </div>
+            <div className={styles.sort__wrapper}>
+              <div
+                className={`${styles.sort__button} ${
+                  activeSort ? styles.active__sort : ""
+                }`}
+                onClick={() => setActiveSort(!activeSort)}
+              >
+                <span className={styles.f__name}>{t("ServicesPage:sort")}</span>
+                <span className={styles.f__icon}>
+                  <Angle />
+                </span>
+              </div>
+              <div
+                className={`${styles.sorting__box} ${
+                  activeSort ? styles.active__box : ""
+                }`}
+              >
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 0 ? styles.active__sorter : ""
+                  }`}
+                  id="price__asc"
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(0);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Ascending />
+                  </span>
+                  <span className={styles.f__name}>
+                    {t("ServicesPage:price")}
+                  </span>
+                </div>
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 1 ? styles.active__sorter : ""
+                  }`}
+                  id="price__des"
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(1);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Descending />
+                  </span>
+                  <span className={styles.f__name}>
+                    {t("ServicesPage:price")}
+                  </span>
+                </div>
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 2 ? styles.active__sorter : ""
+                  }`}
+                  id="area__asc"
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(2);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Ascending />
+                  </span>
+                  <span className={styles.f__name}>
+                    {t("ServicesPage:surface")}
+                  </span>
+                </div>
+                <div
+                  className={`${styles.sorter} ${
+                    selectedSort === 3 ? styles.active__sorter : ""
+                  }`}
+                  id="area__des"
+                  onClick={() => {
+                    setActiveSort(false);
+                    setSelectedSort(3);
+                  }}
+                >
+                  <span className={styles.f__icon}>
+                    <Descending />
+                  </span>
+                  <span className={styles.f__name}>
+                    {t("ServicesPage:surface")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.properties}>
+            {propertyData.map((data, i) => (
+              <PropertyCard data={data} key={i} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <AnimatePresence mode="wait">
+        {activeModal && (
+          <FilterModal
+            activeModal={activeModal}
+            setActiveModal={setActiveModal}
+            transactions={transactions}
+            locations={locations}
+            propertytypes={propertytypes}
+          />
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default PropertyDisplay;

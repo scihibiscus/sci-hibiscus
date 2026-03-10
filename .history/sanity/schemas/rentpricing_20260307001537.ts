@@ -1,0 +1,13 @@
+import { defineType, defineField } from "sanity";
+import {CreditCardIcon} from '@sanity/icons'
+
+export const rentpricing = defineType({
+  name: "rentpricing",
+  title: "Rent Pricing",
+  type: "document",
+  fieldsets: [
+    {
+      name: ""
+    }
+  ]
+})

@@ -1,0 +1,136 @@
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import Lenis from "lenis";
+import { useTranslation } from "react-i18next";
+import Navbar from "../Navigation/Navbar";
+import LinkModal from "../ReUsables/LinkModal";
+import Footer from "../Navigation/Footer";
+import { AnimatePresence } from "framer-motion";
+import PropertyHero from "./PropertyHero";
+import PropertyAbout from "./PropertyAbout";
+import TranslateLoader from "../Navigation/TranslateLoader";
+import PropertyDetails from "./PropertyDetails";
+import PropertyGallery from "./PropertyGallery";
+import OtherDetails from "./OtherDetails";
+
+interface PropertyProps {
+  _id: string;
+  area: number;
+  bath?: number | null;
+  parlour?: number | null;
+  room?: number | null;
+  price: number;
+  name: string;
+  propertytype: {
+    nameen: string;
+    namefr: string;
+    slug: {
+      current: string;
+    };
+  };
+  transaction: {
+    nameen: string;
+    namefr: string;
+    slug: {
+      current: string;
+    };
+  };
+  quarter: string;
+  city: {
+    cityname: string;
+    slug: {
+      current: string;
+    };
+  };
+  slug: {
+    current: string;
+  };
+  rentpricing: string;
+  mainimage: {
+    alt: string;
+  };
+  overview: {
+    en: string;
+    fr: string;
+    _key: string;
+  }[];
+  otherdetails: {
+    en: string;
+    fr: string;
+    _key: string;
+  }[];
+  maindetails: {
+    keyEn: string;
+    keyEn: string;
+    fr: string;
+    _key: string;
+  }[];
+}
+
+const PropertyDetailPage = ({ property }: { property: PropertyProps }) => {
+  //Translations
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
+  //Translating State
+  const [localState, setLocalState] = useState("Initial State");
+  const [animFinished, setAnimFinished] = useState(false);
+
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+  const newsletterRef = useRef<HTMLDivElement | null>(null);
+
+  //Smooth Scroll
+  useEffect(() => {
+    const lenisInstance = new Lenis({
+      duration: 1.2,
+    });
+
+    function raf(time: number) {
+      lenisInstance.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+    // Store the lenis instance in state
+    setLenis(lenisInstance);
+  }, []);
+  return (
+    <>
+      <AnimatePresence
+        mode="wait"
+        onExitComplete={() => {
+          setLocalState("InitialState");
+          setAnimFinished(false);
+        }}
+      >
+        {localState === "Translating State" && !animFinished && (
+          <TranslateLoader
+            localState={localState}
+            animFinished={animFinished}
+            setAnimFinished={setAnimFinished}
+          />
+        )}
+      </AnimatePresence>
+      <Navbar
+        setLocalState={setLocalState}
+        backColor="white"
+        hoverColor="var(--gold)"
+        textColor="var(--black)"
+        thColor="white"
+        linkColor="white"
+        lhColor="rgba(255,255,255,0.5)"
+        logoColor="white"
+      />
+      <LinkModal lenis={lenis} ref={newsletterRef} />
+      <PropertyHero />
+      <PropertyAbout />
+      <PropertyDetails />
+      <OtherDetails />
+      <PropertyGallery />
+      <Footer ref={newsletterRef} />
+    </>
+  );
+};
+
+export default PropertyDetailPage;
