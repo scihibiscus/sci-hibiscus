@@ -71,7 +71,7 @@ const Footer = ({ ref }: { ref: RefObject<HTMLDivElement | null> }) => {
           name: t("Navigation:forsale"),
           link:
             currentLocale === "en"
-              ? "/en/services?transaction=buy"
+              ? "/en/services?transaction=sale"
               : "/fr/services?transaction=buy",
         },
       ],

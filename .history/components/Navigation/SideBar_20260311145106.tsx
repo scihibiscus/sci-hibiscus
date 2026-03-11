@@ -42,8 +42,8 @@ const SideBar = ({
           name: t("Navigation:forsale"),
           link:
             currentLocale === "en"
-              ? "/en/services?transaction=buy"
-              : "/fr/services?transaction=buy",
+              ? "/en/services?transaction=sale"
+              : "/fr/services?transaction=vendre",
         },
       ],
     },
