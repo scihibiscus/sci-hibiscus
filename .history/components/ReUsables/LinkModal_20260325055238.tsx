@@ -147,8 +147,8 @@ const LinkModal = ({
               <Link
                 href={
                   currentLocale === "en"
-                    ? "/en/services?transaction=buy"
-                    : "/fr/services?transaction=buy"
+                    ? "/en/services?transaction=sale"
+                    : "/fr/services?transaction=vendre"
                 }
                 className={styles.lmm}
                 onClick={() => setActiveModal(false)}
