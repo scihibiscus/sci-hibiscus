@@ -140,13 +140,12 @@
 }
 
 @media screen and (max-width: 670px) {
-  .video__wrapper {
-    aspect-ratio: 16/9;
-    border-radius: 12px;
+  .gallery__images {
+    aspect-ratio: 16/12;
   }
 
-  .gallery__images{
-    border-radius: 12px;
+  .video__wrapper {
+    aspect-ratio: 16/9;
   }
 }
 
@@ -162,8 +161,12 @@
 }
 
 @media screen and (max-width: 540px) {
+  .gallery__images {
+    aspect-ratio: 16/13;
+  }
+
   .video__wrapper {
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/13;
   }
 }
 
