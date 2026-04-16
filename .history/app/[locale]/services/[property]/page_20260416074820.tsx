@@ -35,9 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${propertyPost.name} - SCI Hibiscus`,
     description:
-      locale === "en"
-        ? `${propertyPost.overview[0].en}. ${propertyPost.gallery[0].caption}`
-        : `${propertyPost.overview[0].fr}. ${propertyPost.gallery[0].caption}`,
+      locale === "en" ? `${propertyPost.overview[0].en}. ${propertyPost.gallery[0].caption}` : `${propertyPost.overview[].fr}. ${propertyPost.gallery[0].caption}`,
     openGraph: {
       images: [
         {
@@ -54,6 +52,7 @@ export default async function Home({
 }: {
   params: Promise<{ property: string }>;
 }) {
+
   const { property } = await params;
   const propertyDetail = await getProperty(property);
 
