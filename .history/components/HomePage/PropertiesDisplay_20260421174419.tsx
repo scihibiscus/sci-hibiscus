@@ -51,7 +51,7 @@ const PropertiesDisplay = ({ properties }: { properties: PropertyProps[] }) => {
       <div className={`container ${styles.pd__container}`}>
         <div className={styles.pd__top}>
           <HiglightedSpan text={t("HomePage:available")} />
-          <h1 className={styles.pd__h1}>{t("HomePage:props")}</h1>
+          <h1 className={styles.pd__h1}>{t("HomePage:testitext")}</h1>
         </div>
         <div className={styles.pd__bottom}>
           {properties.map((p: any) => (
