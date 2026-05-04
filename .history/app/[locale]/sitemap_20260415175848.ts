@@ -33,6 +33,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: "https://hibiscus.cm/projects/current-projects", priority: 0.7 },
     { url: "https://hibiscus.cm/projects/in-planning", priority: 0.7 },
     { url: "https://hibiscus.cm/projects/references", priority: 0.7 },
-    { url: "https://hibiscus.cm/offer-land", priority: 0.7 },
+    { url: "https://hibiscus.cm/projects/offer-land", priority: 0.7 },
   ];
 }
