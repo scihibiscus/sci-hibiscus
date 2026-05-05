@@ -31,11 +31,11 @@
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.1) 100%
   );
   position: absolute;
   width: 100%;
-  height: 80%;
+  height: 100%;
   z-index: 1;
   bottom: 0;
   left: 0;
@@ -164,7 +164,7 @@
 
 @media screen and (max-width: 520px) {
   .dw__wrapper {
-    aspect-ratio: 16/23;
+    aspect-ratio: 16/24;
   }
 
   .position {
@@ -178,12 +178,12 @@
 
 @media screen and (max-width: 450px) {
   .dw__wrapper {
-    aspect-ratio: 16/25;
+    aspect-ratio: 16/26;
   }
 }
 
 @media screen and (max-width: 390px) {
   .dw__wrapper {
-    aspect-ratio: 16/27;
+    aspect-ratio: 16/28;
   }
 }

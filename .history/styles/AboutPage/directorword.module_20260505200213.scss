@@ -31,7 +31,7 @@
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.1) 100%
   );
   position: absolute;
   width: 100%;
@@ -140,7 +140,7 @@
 
 @media screen and (max-width: 630px) {
   .dw__wrapper {
-    aspect-ratio: 16/18;
+    aspect-ratio: 16/19;
   }
 
   .dwc__content{
@@ -164,22 +164,26 @@
 
 @media screen and (max-width: 520px) {
   .dw__wrapper {
-    aspect-ratio: 16/22;
+    aspect-ratio: 16/24;
   }
 
   .position {
     margin-top: 1rem;
   }
+
+  .word__p {
+    font-size: calc(var(--30-font-size) + 0.05rem);
+  }
 }
 
 @media screen and (max-width: 450px) {
   .dw__wrapper {
-    aspect-ratio: 16/24;
+    aspect-ratio: 16/26;
   }
 }
 
 @media screen and (max-width: 390px) {
   .dw__wrapper {
-    aspect-ratio: 16/26;
+    aspect-ratio: 16/28;
   }
 }
