@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import IMAGE from "../../public/images/image9.jpg";
+import IMAGE from "../../public/images/image.jpg";
 import Apostrophe from "@/utils/Icons/Apostrophe";
 import styles from "../../styles/AboutPage/directorword.module.scss";
 
