@@ -169,7 +169,6 @@ const LinkModal = ({
                 }
                 className={styles.lmm}
                 onClick={() => setActiveModal(false)}
-                prefetch={true}
               >
                 <div>
                   <SellHome />

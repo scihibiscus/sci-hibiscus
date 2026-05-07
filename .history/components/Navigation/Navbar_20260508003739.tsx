@@ -244,7 +244,7 @@ const Navbar = ({
                     data.moreData ? styles.service__li : ""
                   }`}
                 >
-                  <Link href={data.link} className={styles.nav__links} prefetch={true}>
+                  <Link href={data.link} className={styles.nav__links}>
                     {data.name}
                   </Link>
                   {data.moreData && (
@@ -259,7 +259,6 @@ const Navbar = ({
                           href={content.link}
                           className={styles.service__div}
                           key={i}
-                          prefetch={true}
                         >
                           <span className={styles.ser__links}>
                             {content.name}
@@ -296,7 +295,6 @@ const Navbar = ({
               <Link
                 href={`/${currentLocale}/contact`}
                 className={styles.contactlink}
-                prefetch={true}
               >
                 <span>Contact</span>
               </Link>

@@ -159,11 +159,10 @@ const SideBar = ({
                 <Link
                   href="mailto:contact@hibiscus.cm"
                   className={styles.cc__links}
-                  prefetch={false}
                 >
                   contact@hibiscus.cm
                 </Link>
-                <Link href="tel:222222437" className={styles.cc__links} prefetch={false}>
+                <Link href="tel:222222437" className={styles.cc__links}>
                   +237 2 22 22 24 37
                 </Link>
               </div>
@@ -178,7 +177,7 @@ const SideBar = ({
             </div>
           </div>
           <div className={styles.contact__button}>
-            <Link href={`/${currentLocale}/contact`} prefetch={true}>
+            <Link href={`/${currentLocale}/contact`}>
               <span>{t("Navigation:getin")}</span>
             </Link>
           </div>

@@ -165,7 +165,7 @@ const Footer = ({ ref }: { ref: RefObject<HTMLDivElement | null> }) => {
                     <span className={styles.text__large}>{data.name}</span>
                     <div className={styles.tl__bottom}>
                       {data.links.map((link, i) => (
-                        <Link key={i} href={link.link} prefetch={true}>
+                        <Link key={i} href={link.link}>
                           {link.name}
                         </Link>
                       ))}
@@ -176,7 +176,6 @@ const Footer = ({ ref }: { ref: RefObject<HTMLDivElement | null> }) => {
                     href={data.link}
                     key={i}
                     className={`${styles.text__large} ${styles.textl__link}`}
-                    prefetch={true}
                   >
                     {data.name}
                   </Link>

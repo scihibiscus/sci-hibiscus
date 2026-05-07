@@ -178,7 +178,7 @@ const SideBar = ({
             </div>
           </div>
           <div className={styles.contact__button}>
-            <Link href={`/${currentLocale}/contact`} prefetch={true}>
+            <Link href={`/${currentLocale}/contact`}>
               <span>{t("Navigation:getin")}</span>
             </Link>
           </div>

@@ -296,7 +296,6 @@ const Navbar = ({
               <Link
                 href={`/${currentLocale}/contact`}
                 className={styles.contactlink}
-                prefetch={true}
               >
                 <span>Contact</span>
               </Link>

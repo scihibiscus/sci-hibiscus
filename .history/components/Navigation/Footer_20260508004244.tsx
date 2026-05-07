@@ -176,7 +176,6 @@ const Footer = ({ ref }: { ref: RefObject<HTMLDivElement | null> }) => {
                     href={data.link}
                     key={i}
                     className={`${styles.text__large} ${styles.textl__link}`}
-                    prefetch={true}
                   >
                     {data.name}
                   </Link>
