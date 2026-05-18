@@ -17,7 +17,7 @@ import Testimonial from "./Testimonial";
 import { AnimatePresence } from "framer-motion";
 import { LocationsData, TransactionData } from "@/types";
 import VenueBanner from "../ReUsables/VenueBanner";
-import SpecialOffer from "../ReUsables/SpecialOffer";
+import Special
 import PropertiesDisplay from "./PropertiesDisplay";
 
 interface PropertyProps {
