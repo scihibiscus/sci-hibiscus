@@ -13,6 +13,7 @@
     "@next/bundle-analyzer": "^16.1.6",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.22.0",
+    "@videojs/react": "^10.0.0-beta.28",
     "framer-motion": "^12.23.26",
     "googleapis": "^169.0.0",
     "gsap": "^3.14.2",

@@ -37,8 +37,7 @@ const HeroSection = () => {
     <div className={styles.herosection}>
       <div className={styles.image__wrapper}>
         <div className={styles.hero__video}>
-          {/* <VideoJS options={videoJsOptions} poster={"/images/hero.jpg"} /> */}
-          <HomeVideo src="/video/video.mp4" poster={"/images/hero.jpg"} />
+          <HomeVideo src="/video/video.mp4" />
         </div>
         <div className={styles.hero__gradient}></div>
       </div>

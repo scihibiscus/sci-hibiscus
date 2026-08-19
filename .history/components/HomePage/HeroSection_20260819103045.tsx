@@ -37,8 +37,7 @@ const HeroSection = () => {
     <div className={styles.herosection}>
       <div className={styles.image__wrapper}>
         <div className={styles.hero__video}>
-          {/* <VideoJS options={videoJsOptions} poster={"/images/hero.jpg"} /> */}
-          <HomeVideo src="/video/video.mp4" poster={"/images/hero.jpg"} />
+          <VideoJS options={videoJsOptions} poster={"/images/hero.jpg"} />
         </div>
         <div className={styles.hero__gradient}></div>
       </div>
@@ -56,11 +55,7 @@ const HeroSection = () => {
                 thColor="white"
                 iconColor="var(--black)"
                 ihColor="white"
-                link={
-                  currentLocale === "en"
-                    ? "/en/projects/current-projects"
-                    : "/fr/projets/projets-actuels"
-                }
+                link= {currentLocale==="en" ? "/en/projects/current-projects" : "/fr/projets/projets-actuels"}
               />
             </div>
           </div>
