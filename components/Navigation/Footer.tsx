@@ -212,7 +212,7 @@ const Footer = ({ ref }: { ref: RefObject<HTMLDivElement | null> }) => {
                 className={styles.bettermarque}
                 onClick={() => setActiveBetter(!activeBetter)}
               >
-                Better Marque
+                BetterMarque SARL
               </span>
             </div>
             <BetterMarque

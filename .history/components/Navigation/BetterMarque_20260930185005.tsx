@@ -10,7 +10,6 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import styles from "../../styles/Navigation/bettermarque.module.scss";
 
-
 const BetterMarque = ({
   activeBetter,
   setActiveBetter,
@@ -50,7 +49,7 @@ const BetterMarque = ({
             }
           }}
           className={`${styles.word} ${
-            word === "Better" || word === "Marque" || word === "Marque's"
+            word === "BetterMarque" || word === "SARL" || word === "SARL's"
               ? styles.highlight
               : ""
           }`}
@@ -102,11 +101,12 @@ const BetterMarque = ({
     );
 
     //TL 2
-    tl2.to(betterRef.current, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      ease: "power4.inOut",
-      duration: 0.7,
-    })
+    tl2
+      .to(betterRef.current, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        ease: "power4.inOut",
+        duration: 0.7,
+      })
       .to(
         logoRef.current,
         {
@@ -164,7 +164,13 @@ const BetterMarque = ({
         ref={betterRef}
       >
         <div className={styles.b__image}>
-          <Image src={IMAGE3} fill quality={100} alt="Better Marque" />
+          <Image
+            src={IMAGE3}
+            fill
+            quality={100}
+            alt="Better Marque"
+            placeholder="blur"
+          />
         </div>
         <div className={styles.b__contact}>
           <div
